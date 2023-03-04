@@ -1,3 +1,9 @@
+import Page from "../components/Page";
+
 export default function Lexicomp() {
-    return <h1>LEXICOMP PAGE</h1>
+  return (
+    <Page>
+      <h1>LEXICOMP PAGE</h1>
+    </Page>
+  );
 }

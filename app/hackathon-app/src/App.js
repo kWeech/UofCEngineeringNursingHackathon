@@ -11,7 +11,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import PatientList from "./pages/PatientList";
 import classes from "./App.module.css";
-
+import Patient from "./pages/Patient";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/patientlist", element: <PatientList /> },
       { path: "/lexicomp", element: <Lexicomp /> },
       { path: "/orders", element: <Orders /> },
+      { path: "/patient", element: <Patient /> },
     ],
   },
 ]);
