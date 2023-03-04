@@ -1,3 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 export default function Home() {
-    return (<div><h1>THIS IS OUR HOME PAGE</h1></div>)
+  return (
+    <div>
+      <h1>THIS IS OUR HOME PAGE</h1>
+      <NavLink to="/home">
+        <button>FLOWSHEETS</button>
+      </NavLink>
+    </div>
+  );
 }
