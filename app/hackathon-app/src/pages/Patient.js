@@ -29,6 +29,8 @@ const modalHandlerController = (state, action) => {
 };
 
 export default function Patient(props) {
+  const patient = useLocation();
+  console.log(patient);
   const [modalHandler, dispatchmodalHandler] = useReducer(
     modalHandlerController,
     {
@@ -37,16 +39,16 @@ export default function Patient(props) {
     }
   );
 
-  const patient = {
-    id: 1,
-    name: "FirstNameA",
-    lastName: "LastNameA",
-    medication: [{ name: "A", dosage: "dosageA" }],
-    careTeam: [{ id: "NurseAId", name: "NurseA" }],
-    flowSheet: [],
-    nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteA" }],
-    communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
-  };
+  // const patient = {
+  //   id: 1,
+  //   name: "FirstNameA",
+  //   lastName: "LastNameA",
+  //   medication: [{ name: "A", dosage: "dosageA" }],
+  //   careTeam: [{ id: "NurseAId", name: "NurseA" }],
+  //   flowSheet: [],
+  //   nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteA" }],
+  //   communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
+  // };
 
   const ButtonClickHandler = (event) => {
     console.log(event);
@@ -54,7 +56,7 @@ export default function Patient(props) {
 
   return (
     <>
-      <h1>Patient Menu</h1>
+      <h3>{patient.state.patient.name && " " && patient.state.patient.lastName}</h3>
       {modalHandler.modal && <Modal></Modal>}
       <Button onClick={ButtonClickHandler}>Call/Text</Button>
       <Button>Medications</Button>
