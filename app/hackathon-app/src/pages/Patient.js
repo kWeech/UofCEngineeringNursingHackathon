@@ -1,3 +1,8 @@
 export default function Patient(props) {
-    return <h1>INDIVIDUAL Patients</h1>
+  console.log(props.patient);
+  return (
+    <>
+      <h1>INDIVIDUAL Patients</h1>
+    </>
+  );
 }
