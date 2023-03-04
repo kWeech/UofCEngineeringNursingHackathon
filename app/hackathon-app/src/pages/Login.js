@@ -7,6 +7,13 @@ export default function Login() {
       <NavLink to="/home">
         <button>LOGIN</button>
       </NavLink>
+      <form >
+      <input 
+      type = "password" 
+      placeholder = "Password"
+      />
+      
+      </form>
     </div>
   );
 }
