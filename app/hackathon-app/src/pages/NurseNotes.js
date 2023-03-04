@@ -20,8 +20,7 @@ export default function NurseNotes() {
 
 const onSave = () => {
   const newNote = (<Note date={"2023-03-04"} note={value}/>)
-  NOTES.push(newNote)
-  setNotesArray(newNote);
+  setNotesArray([...notesArray, newNote])
   setValue("");
 }
 
@@ -44,7 +43,7 @@ const onClear = () => {
       <button onClick={onSave}>Save</button>
       <button onClick={onClear}>Clear</button>
       <h2>Historic Notes</h2>
-      <div>{NOTES}</div>
+      <div>{notesArray}</div>
      </Page>
     )
   }
