@@ -1,3 +1,9 @@
+import Page from "../components/Page";
+
 export default function Policy() {
-    return <h1>HERE ARE SOME POLICIES</h1>
+  return (
+    <Page>
+      <h1>HERE ARE SOME POLICIES</h1>
+    </Page>
+  );
 }
