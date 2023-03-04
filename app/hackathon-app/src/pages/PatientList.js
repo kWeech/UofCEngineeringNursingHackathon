@@ -68,7 +68,7 @@ export default function PatientList() {
           return (
             <Link
               key={patient.id}
-              to={{ pathname: "/patient", state: { result: patient } }}
+              to={{ pathname: "/patient", aboutProps: { name: "test" } }}
             >
               <Button
                 key={patient.id}
