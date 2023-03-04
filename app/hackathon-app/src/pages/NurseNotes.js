@@ -14,7 +14,7 @@ const NOTES = [
   />,
 ];
 
-export default function NurseNotes() {
+export default function NurseNotes(props) {
   const [notesArray, setNotesArray] = useState(NOTES);
   const [value, setValue] = useState("");
   const [filterValue, setFilterValue] = useState("");
