@@ -19,14 +19,14 @@ export default function NurseNotes(props) {
   });
   const content = useLocation();
   console.log(content.state.content);
-  useEffect(() => {
-    content.state.content.forEach(note => {
-      const notes = (<Note date={note.date} note={note.note} key={Math.random()}/>)
-      NOTES.push(notes)
-    })
-    setNotesArray(NOTES);
-  }, [])
-  console.log(NOTES);
+  // useEffect(() => {
+  //   content.state.content.forEach(note => {
+  //     const notes = (<Note date={new Date(note.date)} note={note.note} key={Math.random()}/>)
+  //     NOTES.push(notes)
+  //   })
+  //   setNotesArray(NOTES);
+  // }, [])
+  // console.log(NOTES);
 
 
   const onSave = () => {
