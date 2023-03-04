@@ -1,13 +1,13 @@
 import Root from "./pages/Root";
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Flowsheets from './pages/Flowsheets';
-import NurseNotes from './pages/NurseNotes';
-import QR from './pages/QR';
-import Policy from './pages/Policy';
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Flowsheets from "./pages/Flowsheets";
+import NurseNotes from "./pages/NurseNotes";
+import QR from "./pages/QR";
+import Policy from "./pages/Policy";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import PatientList from './pages/PatientList';
+import PatientList from "./pages/PatientList";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 
 function App() {
   return (
