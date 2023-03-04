@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSpeechRecognition } from 'react-speech-kit';
 import Note from '../components/Note';
+import Page from '../components/Page';
 
 const NOTES = [
   <Note date={"2022-12-03"} note={"This is a note"}/>,
@@ -21,6 +22,7 @@ const onSave = () => {
   const newNote = (<Note date={"2023-03-04"} note={value}/>)
   NOTES.push(newNote)
   setNotesArray(newNote);
+  setValue("");
 }
 
 const onClear = () => {
