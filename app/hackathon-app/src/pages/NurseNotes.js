@@ -4,9 +4,9 @@ import Note from '../components/Note';
 import Page from '../components/Page';
 
 const NOTES = [
-  <Note date={"2022-12-03"} note={"This is a note"}/>,
-  <Note date={"2022-12-15"} note={"This patient was so bad omg"}/>,
-  <Note date={"2022-12-03"} note={"This was a great patient love them xoxo"}/>,
+  <Note date={"2022-12-03"} note={"This is a note"} key={1}/>,
+  <Note date={"2022-12-15"} note={"This patient was so bad omg"} key={2}/>,
+  <Note date={"2022-12-03"} note={"This was a great patient love them xoxo"} key={3}/>,
  ]
 
 export default function NurseNotes() {
@@ -19,7 +19,7 @@ export default function NurseNotes() {
  })
 
 const onSave = () => {
-  const newNote = (<Note date={"2023-03-04"} note={value}/>)
+  const newNote = (<Note date={"2023-03-04"} note={value} key={Math.random()}/>)
   setNotesArray([...notesArray, newNote])
   setValue("");
 }
