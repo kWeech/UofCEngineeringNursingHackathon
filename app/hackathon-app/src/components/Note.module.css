@@ -1,20 +1,19 @@
-.date {
-    display:flex;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.date p {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
 }
 
 .note {
-    margin:0;
-}
-
-.note p {
-    border: solid black;
-}
-
-.body {
-    padding:0;
+  margin: 0rem;
+  padding: 0.5rem;
+  height: auto;
+  border: 1px solid grey;
+  border-radius: 10px;
 }

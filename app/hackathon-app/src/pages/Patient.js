@@ -7,10 +7,12 @@ import { useReducer } from "react";
 import Medication from "../components/Medication";
 import { Link } from "react-router-dom";
 import Contact from "../components/Contact";
+import Appointments from "../components/Appointments";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
     case "Medications": {
+      console.log("entered medication");
       return {
         ...state,
         modal: true,
@@ -25,8 +27,32 @@ const modalHandlerController = (state, action) => {
         modalType: <Contact content={state.patient}></Contact>,
       };
     }
+    case "Community Appointments": {
+      console.log("entered Community Appointments");
+      return {
+        ...state,
+        modal: true,
+        modalType: (
+          <Appointments
+            content={state.patient.communityAppointments}
+          ></Appointments>
+        ),
+      };
+    }
+    case "Community Appointments": {
+      console.log("entered Community Appointments");
+      return {
+        ...state,
+        modal: true,
+        modalType: (
+          <Appointments
+            content={state.patient.communityAppointments}
+          ></Appointments>
+        ),
+      };
+    }
   }
-  return { ...state, modal: null };
+  return { ...state, modal: false };
 };
 
 export default function Patient(props) {
@@ -47,13 +73,19 @@ export default function Patient(props) {
     });
   };
 
+  const cancel = () => {
+    console.log("running");
+    dispatchmodalHandler({});
+  };
+
   return (
     <>
       <h1>Patient Menu</h1>
-      {modalHandler.modal && <Modal>{modalHandler.modalType}</Modal>}
+      {modalHandler.modal && (
+        <Modal cancel={cancel}>{modalHandler.modalType}</Modal>
+      )}
       <Button onClick={ButtonClickHandler}>Contact Information</Button>
       <Button onClick={ButtonClickHandler}>Medications</Button>
-      <Button onClick={ButtonClickHandler}>Care Team List</Button>
       <NavLink to="/flowsheet">
         <Button>FLOWSHEETS</Button>
       </NavLink>
