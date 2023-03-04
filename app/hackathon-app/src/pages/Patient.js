@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
 import { Link } from "react-router-dom";
+import Appointments from "../components/Appointments";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
@@ -30,7 +31,9 @@ const modalHandlerController = (state, action) => {
       return {
         ...state,
         modal: true,
-        modalType: <Medication content={state.patient.medication}></Medication>,
+        modalType: (
+          <Appointments content={state.patient.medication}></Appointments>
+        ),
       };
     }
   }
