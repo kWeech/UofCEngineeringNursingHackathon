@@ -6,7 +6,7 @@ import classes from "./Home.module.css";
 export default function Home() {
   return (
     <Page>
-      <h1>THIS IS OUR HOME PAGE</h1>
+      <h1 className={classes.home}>HOME PAGE</h1>
       <div className={classes.buttonContainer}>
         <NavLink to="/flowsheet">
           <Button>FLOWSHEETS</Button>
