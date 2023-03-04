@@ -43,6 +43,7 @@ export default function Patient(props) {
   );
 
   const ButtonClickHandler = (event) => {
+    console.log(event.target.innerHTML);
     dispatchmodalHandler({
       type: event.target.innerHTML,
     });
@@ -53,12 +54,12 @@ export default function Patient(props) {
       <h1>Patient Menu</h1>
       {modalHandler.modal && <Modal>{modalHandler.modalType}</Modal>}
       <Button onClick={ButtonClickHandler}>Call/Text</Button>
-      <Button>Medications</Button>
-      <Button>Care Team List</Button>
+      <Button onClick={ButtonClickHandler}>Medications</Button>
+      <Button onClick={ButtonClickHandler}>Care Team List</Button>
       <NavLink to="/flowsheet">
         <Button>FLOWSHEETS</Button>
       </NavLink>
-      <Button>Community Appointments</Button>
+      <Button onClick={ButtonClickHandler}>Community Appointments</Button>
     </>
   );
 }

@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import Patient from "./Patient";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Note from "../components/Note";
 let patient = null;
 export default function PatientList() {
   const patientList = [
@@ -55,7 +56,7 @@ export default function PatientList() {
       medication: [{ name: "E", dosage: "dosageE" }],
       careTeam: [{ id: "NurseEId", name: "NurseE" }],
       flowSheet: [],
-      nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteE" }],
+      nurseNotes: [<Note></Note>],
       communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
     },
   ];
