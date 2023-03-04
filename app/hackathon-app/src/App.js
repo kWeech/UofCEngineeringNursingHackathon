@@ -1,9 +1,12 @@
 import Root from "./pages/Root";
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Flowsheets from './pages/Flowsheets';
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Flowsheets from "./pages/Flowsheets";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import Button from "./components/Button";
+import Page from "./components/Page";
+import classes from "./App.module.css";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +20,9 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 function App() {
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={router} />
     </div>
   );
