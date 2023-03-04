@@ -15,7 +15,9 @@ const modalHandlerController = (state, action) => {
         return {
           ...state,
           modal: true,
-          modalType: <Medication content={state.patient}></Medication>,
+          modalType: (
+            <Medication content={state.patient.medication}></Medication>
+          ),
         };
       }
     case "TOGGLE_CHANGED": {
@@ -31,13 +33,12 @@ const modalHandlerController = (state, action) => {
 
 export default function Patient(props) {
   const patient = useLocation();
-  console.log(patient);
   const [modalHandler, dispatchmodalHandler] = useReducer(
     modalHandlerController,
     {
       modal: false,
       modalType: null,
-      patient: patient,
+      patient: patient.state.patient,
     }
   );
 
