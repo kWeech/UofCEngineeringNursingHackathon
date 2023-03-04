@@ -1,6 +1,7 @@
 import Page from "../components/Page";
 import classes from "./PatientList.module.css";
 import Button from "../components/Button";
+import Modal from "../components/Modal";
 export default function PatientList() {
   const patientList = [
     {
@@ -59,6 +60,7 @@ export default function PatientList() {
   return (
     <Page>
       <h1>THIS IS PATIENTLIST</h1>
+      <Modal></Modal>
       <div className={classes.patientListContainer}>
         {patientList.map((patient) => {
           return (
