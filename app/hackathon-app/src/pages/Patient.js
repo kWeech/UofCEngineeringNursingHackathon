@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Button from '../components/Button';
+import Page from "../components/Page";
 
 export default function Patient(props) {
     return (
