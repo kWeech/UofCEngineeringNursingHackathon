@@ -2,6 +2,7 @@ import Page from "../components/Page";
 import classes from "./PatientList.module.css";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
+import { useState } from "react";
 export default function PatientList() {
   const patientList = [
     {
