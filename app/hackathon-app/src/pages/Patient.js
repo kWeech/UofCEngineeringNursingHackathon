@@ -19,7 +19,7 @@ const modalHandlerController = (state, action) => {
         modalType: <Medication content={state.patient.medication}></Medication>,
       };
     }
-    case "Call/Text": {
+    case "Contact Information": {
       console.log("entered call/text");
       return {
         ...state,
