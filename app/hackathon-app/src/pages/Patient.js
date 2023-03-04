@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
+import Note from '../components/Note';
 
 const modalHandlerController = (state, action) => {
   console.log(action.type);
