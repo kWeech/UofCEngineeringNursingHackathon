@@ -18,8 +18,14 @@ export default function Home() {
       <NavLink to="/patientlist">
         <Button>PATIENTLIST</Button>
       </NavLink>
-      <NavLink to="/patientlist">
-        <Button>PATIENTLIST</Button>
+      <NavLink to="/policy">
+        <Button>POLICY</Button>
+      </NavLink>
+        <NavLink to="/lexicomp">
+        <Button>LEXICOMP</Button>
+      </NavLink>
+      <NavLink to="/orders">
+        <Button>ORDERS</Button>
       </NavLink>
     </Page>
   );
