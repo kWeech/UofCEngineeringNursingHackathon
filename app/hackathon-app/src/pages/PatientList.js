@@ -2,7 +2,10 @@ import Page from "../components/Page";
 import classes from "./PatientList.module.css";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
+import Patient from "./Patient";
 import { useState } from "react";
+
+let patient = null;
 export default function PatientList() {
   const [modalController, setModalController] = useState(false);
   const patientList = [
@@ -59,18 +62,25 @@ export default function PatientList() {
   ];
 
   const loadPatientModal = (event) => {
-    console.log(event);
+    patient = patientList.filter((x) => {
+      return x.id === +event.target.id;
+    })[0];
     setModalController(true);
   };
   return (
     <Page>
       <h1>THIS IS PATIENTLIST</h1>
-      {modalController && <Modal></Modal>}
+      {modalController && (
+        <Modal>
+          <Patient patient={patient} />
+        </Modal>
+      )}
       <div className={classes.patientListContainer}>
         {patientList.map((patient) => {
           return (
             <Button
               key={patient.id}
+              id={patient.id}
               className={classes.Button}
               onClick={loadPatientModal}
             >{`${patient.id}: ${patient.name} ${patient.lastName}`}</Button>
