@@ -1,7 +1,5 @@
 import classes from "./Medication.module.css";
 export default function Medication(props) {
-  console.log(props.content);
-  console.log(props.content.keys);
   return (
     <div className={classes.medicationContainer}>
       <div className={classes.medicationContent}>
