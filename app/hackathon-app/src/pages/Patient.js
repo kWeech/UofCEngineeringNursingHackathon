@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
 import { Link } from "react-router-dom";
+import Contact from "../components/Contact";
 import Appointments from "../components/Appointments";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
@@ -23,7 +24,19 @@ const modalHandlerController = (state, action) => {
       return {
         ...state,
         modal: true,
-        modalType: <Medication content={state.patient.medication}></Medication>,
+        modalType: <Contact content={state.patient}></Contact>,
+      };
+    }
+    case "Community Appointments": {
+      console.log("entered Community Appointments");
+      return {
+        ...state,
+        modal: true,
+        modalType: (
+          <Appointments
+            content={state.patient.communityAppointments}
+          ></Appointments>
+        ),
       };
     }
     case "Community Appointments": {
@@ -71,7 +84,7 @@ export default function Patient(props) {
       {modalHandler.modal && (
         <Modal cancel={cancel}>{modalHandler.modalType}</Modal>
       )}
-      <Button onClick={ButtonClickHandler}>Call/Text</Button>
+      <Button onClick={ButtonClickHandler}>Contact Information</Button>
       <Button onClick={ButtonClickHandler}>Medications</Button>
       <NavLink to="/flowsheet">
         <Button>FLOWSHEETS</Button>
