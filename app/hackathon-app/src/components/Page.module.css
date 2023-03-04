@@ -1,7 +1,6 @@
 .page {
   height: 96vh;
   width: 96vw;
-  overflow: hidden;
   margin-left: 2vw;
   margin-right: 2vw;
 }
