@@ -13,7 +13,7 @@ export default function Login() {
     <Page>
       <h1>LOGIN PAGE</h1>
       <NavLink to="/home">
-        <button disbled = {!isLoginFormValid()}>LOGIN</button>
+        <button disabled = {!isLoginFormValid()}>LOGIN</button>
       </NavLink>
       <form >
         <input 
