@@ -1,3 +1,4 @@
+import Page from '../components/Page';
 export default function QR() {
-    return<h1>This should just open up camera??</h1>
+    return<Page>This should just open up camera??</Page>
 }

@@ -1,21 +1,26 @@
 import { NavLink } from "react-router-dom";
+import Page from '../components/Page';
+import Button from '../components/Button';
 
 export default function Home() {
   return (
-    <div>
+    <Page>
       <h1>THIS IS OUR HOME PAGE</h1>
       <NavLink to="/flowsheet">
-        <button>FLOWSHEETS</button>
+        <Button>FLOWSHEETS</Button>
       </NavLink>
       <NavLink to="/nursenotes">
-        <button>NURSENOTES</button>
+        <Button>NURSENOTES</Button>
       </NavLink>
       <NavLink to="/qr">
-        <button>QR</button>
+        <Button>QR</Button>
       </NavLink>
       <NavLink to="/patientlist">
-        <button>PATIENTLIST</button>
+        <Button>PATIENTLIST</Button>
       </NavLink>
-    </div>
+      <NavLink to="/patientlist">
+        <Button>PATIENTLIST</Button>
+      </NavLink>
+    </Page>
   );
 }
