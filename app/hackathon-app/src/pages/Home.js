@@ -10,6 +10,12 @@ export default function Home() {
       <NavLink to="/nursenotes">
         <button>NURSENOTES</button>
       </NavLink>
+      <NavLink to="/qr">
+        <button>QR</button>
+      </NavLink>
+      <NavLink to="/patientlist">
+        <button>PATIENTLIST</button>
+      </NavLink>
     </div>
   );
 }
