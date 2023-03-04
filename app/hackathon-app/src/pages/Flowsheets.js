@@ -1,3 +1,3 @@
 export default function Flowsheets() {
-    return(<form><input>Here is a form</input></form>)
+    return(<h1>THIS IS A FLOWSHEET</h1>)
 }

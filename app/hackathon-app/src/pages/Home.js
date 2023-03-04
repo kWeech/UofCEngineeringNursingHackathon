@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <h1>THIS IS OUR HOME PAGE</h1>
-      <NavLink to="/home">
+      <NavLink to="/flowsheet">
         <button>FLOWSHEETS</button>
       </NavLink>
     </div>
