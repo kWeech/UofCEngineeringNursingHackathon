@@ -7,6 +7,9 @@ export default function Home() {
       <NavLink to="/flowsheet">
         <button>FLOWSHEETS</button>
       </NavLink>
+      <NavLink to="/nursenotes">
+        <button>NURSENOTES</button>
+      </NavLink>
     </div>
   );
 }
