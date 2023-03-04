@@ -3,33 +3,62 @@ import Button from "../components/Button";
 import Page from "../components/Page";
 import Modal from "../components/Modal";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useReducer } from "react";
+import Medication from "../components/Medication";
+
+const modalHandlerController = (state, action) => {
+  console.log(action.type);
+  switch (action.type) {
+    case "Medications":
+      console.log("entered call/text");
+      {
+        return {
+          ...state,
+          modal: true,
+          modalType: (
+            <Medication content={state.patient.medication}></Medication>
+          ),
+        };
+      }
+    case "TOGGLE_CHANGED": {
+      console.log("Entered Toggle Changed");
+      return {
+        ...state,
+        toggleState: !state.toggleState,
+      };
+    }
+  }
+  return { ...state, modal: null };
+};
 
 export default function Patient(props) {
-    const [showModal, setShowModal] = useState(false);
-    const handleCallTextButtonClick = () => {
-        setShowModal(true);
-      };
-    
-      const handleCloseModal = () => {
-        setShowModal(false);
-      };
-    return (
-        <Page>
-          <h1>Patient Menu</h1> 
-          <Button onClick={handleCallTextButtonClick}>Call/Text</Button>
-          <Button>Medications</Button>
-          <Button>Care Team List</Button>
-          <NavLink to="/flowsheet">
-            <Button>FLOWSHEETS</Button>
-          </NavLink>
-          <Button>Community Appointments</Button>
-          {showModal && (
-            <Modal onClose={handleCloseModal}>
-              <h2>Call/Text Modal</h2>
-              <p>Phone number: 403-999-9999</p>
-            </Modal>
-      )}
-        </Page>
-    );
+  const patient = useLocation();
+  const [modalHandler, dispatchmodalHandler] = useReducer(
+    modalHandlerController,
+    {
+      modal: false,
+      modalType: null,
+      patient: patient.state.patient,
+    }
+  );
+
+  const ButtonClickHandler = (event) => {
+    dispatchmodalHandler({
+      type: event.target.innerHTML,
+    });
+  };
+
+  return (
+    <>
+      <h1>Patient Menu</h1>
+      {modalHandler.modal && <Modal>{modalHandler.modalType}</Modal>}
+      <Button onClick={ButtonClickHandler}>Call/Text</Button>
+      <Button>Medications</Button>
+      <Button>Care Team List</Button>
+      <NavLink to="/flowsheet">
+        <Button>FLOWSHEETS</Button>
+      </NavLink>
+      <Button>Community Appointments</Button>
+    </>
+  );
 }

@@ -66,10 +66,7 @@ export default function PatientList() {
       <div className={classes.patientListContainer}>
         {patientList.map((patient) => {
           return (
-            <Link
-              key={patient.id}
-              to={{ pathname: "/patient"}}
-            >
+            <Link key={patient.id} to="/patient" state={{ patient: patient }}>
               <Button
                 key={patient.id}
                 id={patient.id}
