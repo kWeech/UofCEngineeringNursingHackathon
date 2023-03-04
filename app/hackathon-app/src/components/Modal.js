@@ -5,6 +5,7 @@ export default function Modal(props) {
     <div className={classes.modalContainer}>
       <div className={classes.overlay}>
         <div className={classes.modal}>
+          <button onClick={props.cancel}>Cancel</button>
           <div className={classes.modalContent}>{props.children}</div>
         </div>
       </div>
