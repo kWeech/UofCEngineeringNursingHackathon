@@ -18,7 +18,11 @@ export default function PatientList() {
       careTeam: [{ id: "NurseAId", name: "NurseA", phone: "123-1231" }],
       flowSheet: [],
       nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteA" }],
-      communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
+      communityAppointments: [
+        { date: new Date(1995, 11, 17, 3, 24, 0) },
+        { date: new Date(2021, 11, 17, 3, 24, 0) },
+        { date: new Date(2022, 11, 17, 3, 24, 0) },
+      ],
     },
     {
       id: 2,

@@ -32,7 +32,9 @@ const modalHandlerController = (state, action) => {
         ...state,
         modal: true,
         modalType: (
-          <Appointments content={state.patient.medication}></Appointments>
+          <Appointments
+            content={state.patient.communityAppointments}
+          ></Appointments>
         ),
       };
     }
@@ -71,7 +73,6 @@ export default function Patient(props) {
       )}
       <Button onClick={ButtonClickHandler}>Call/Text</Button>
       <Button onClick={ButtonClickHandler}>Medications</Button>
-      <Button onClick={ButtonClickHandler}>Care Team List</Button>
       <NavLink to="/flowsheet">
         <Button>FLOWSHEETS</Button>
       </NavLink>
