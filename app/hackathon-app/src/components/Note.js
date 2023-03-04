@@ -1,14 +1,10 @@
-import classes from './Note.module.css'
+import classes from "./Note.module.css";
 
 export default function Note(props) {
   return (
-    <div id={props.id}>
-        <div className={classes.date}>
-      <p>Date:</p>
-      <p>{props.date}</p></div>
-      <div className={classes.note}>
-      <h3>Note:</h3>
-      <p>{props.note}</p></div>
+    <div id={props.id} className={classes.container}>
+      <p className={classes.date}>{props.date}</p>
+      <p className={classes.note}>{props.note}</p>
     </div>
   );
 }

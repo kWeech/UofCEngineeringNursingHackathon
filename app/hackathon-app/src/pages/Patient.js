@@ -5,26 +5,23 @@ import Modal from "../components/Modal";
 import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
-
+import { Link } from "react-router-dom";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
-    case "Medications":
-      console.log("entered call/text");
-      {
-        return {
-          ...state,
-          modal: true,
-          modalType: (
-            <Medication content={state.patient.medication}></Medication>
-          ),
-        };
-      }
-    case "TOGGLE_CHANGED": {
-      console.log("Entered Toggle Changed");
+    case "Medications": {
       return {
         ...state,
-        toggleState: !state.toggleState,
+        modal: true,
+        modalType: <Medication content={state.patient.medication}></Medication>,
+      };
+    }
+    case "Call/Text": {
+      console.log("entered call/text");
+      return {
+        ...state,
+        modal: true,
+        modalType: <Medication content={state.patient.medication}></Medication>,
       };
     }
   }
@@ -43,6 +40,7 @@ export default function Patient(props) {
   );
 
   const ButtonClickHandler = (event) => {
+    console.log(event.target.innerHTML);
     dispatchmodalHandler({
       type: event.target.innerHTML,
     });
@@ -53,12 +51,18 @@ export default function Patient(props) {
       <h1>Patient Menu</h1>
       {modalHandler.modal && <Modal>{modalHandler.modalType}</Modal>}
       <Button onClick={ButtonClickHandler}>Call/Text</Button>
-      <Button>Medications</Button>
-      <Button>Care Team List</Button>
+      <Button onClick={ButtonClickHandler}>Medications</Button>
+      <Button onClick={ButtonClickHandler}>Care Team List</Button>
       <NavLink to="/flowsheet">
         <Button>FLOWSHEETS</Button>
       </NavLink>
-      <Button>Community Appointments</Button>
+      <Button onClick={ButtonClickHandler}>Community Appointments</Button>
+      <Link
+        to="/nursenotes"
+        state={{ content: patient.state.patient.nurseNotes }}
+      >
+        <Button>Nurse Notes</Button>
+      </Link>
     </>
   );
 }

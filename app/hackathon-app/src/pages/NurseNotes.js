@@ -1,20 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 import Note from "../components/Note";
 import Page from "../components/Page";
+import classes from "./NurseNotes.module.css";
+import { useLocation } from "react-router-dom";
 
 const NOTES = [
-  <Note date={"2022-12-03"} note={"This is a note"} key={1} />,
-  <Note date={"2022-12-15"} note={"This patient was so bad omg"} key={2} />,
-  <Note
-    date={"2022-12-03"}
-    note={"This was a great patient love them xoxo"}
-    key={3}
-  />,
 ];
 
-export default function NurseNotes() {
-  const [notesArray, setNotesArray] = useState(NOTES);
+export default function NurseNotes(props) {
+  const [notesArray, setNotesArray] = useState([]);
   const [value, setValue] = useState("");
   const [filterValue, setFilterValue] = useState("");
   const { listen, stop } = useSpeechRecognition({
@@ -22,6 +17,17 @@ export default function NurseNotes() {
       setValue(result);
     },
   });
+  const content = useLocation();
+  console.log(content.state.content);
+  useEffect(() => {
+    content.state.content.forEach(note => {
+      const notes = (<Note date={note.date} note={note.note} key={Math.random()}/>)
+      NOTES.push(notes)
+    })
+    setNotesArray(NOTES);
+  }, [])
+  console.log(NOTES);
+
 
   const onSave = () => {
     const newNote = (
@@ -43,22 +49,29 @@ export default function NurseNotes() {
 
   return (
     <Page>
-      <h2>Add New Note</h2>
-      <p>{notesArray[0].props.note}</p>
-      <textarea
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
-      <button onMouseDown={listen}>🎤 Start</button>
-      <button onMouseDown={stop}>🎤 Stop</button>
-      <button onClick={onSave}>Save</button>
-      <button onClick={onClear}>Clear</button>
-      <h2>Historic Notes</h2>
-      <textarea
-        value={filterValue}
-        onChange={(event) => setFilterValue(event.target.value)}
-      />
-      <button onClick={onSearchClear}>Clear</button>
+      <h2 className={classes.header}>Add New Note</h2>
+      <div className={classes.addNoteContainer}>
+        <textarea
+          placeholder="Add a note here"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+        <div className={classes.buttonContainer}>
+          <button onMouseDown={listen}>🎤 Start</button>
+          <button onMouseDown={stop}>🎤 Stop</button>
+          <button onClick={onSave}>Save</button>
+          <button onClick={onClear}>Clear</button>
+        </div>
+      </div>
+      <h3>Historic Notes</h3>
+      <div className={classes.filterContainer}>
+        <textarea
+          value={filterValue}
+          onChange={(event) => setFilterValue(event.target.value)}
+          placeholder="Filter by note"
+        ></textarea>
+        <button onClick={onSearchClear}>Clear</button>
+      </div>
       <div>
         {notesArray.filter((note) =>
           note.props.note.toLowerCase().includes(filterValue.toLowerCase())
