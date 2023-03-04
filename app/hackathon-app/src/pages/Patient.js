@@ -87,7 +87,7 @@ export default function Patient(props) {
       <Button onClick={ButtonClickHandler}>Contact Information</Button>
       <Button onClick={ButtonClickHandler}>Medications</Button>
       <NavLink to="/flowsheet">
-        <Button>FLOWSHEETS</Button>
+        <Button>Flowsheets</Button>
       </NavLink>
       <Button onClick={ButtonClickHandler}>Community Appointments</Button>
       <Link

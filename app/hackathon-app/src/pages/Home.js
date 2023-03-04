@@ -8,9 +8,6 @@ export default function Home() {
     <Page show={false}>
       <h1 className={classes.home}>HOME PAGE</h1>
       <div className={classes.buttonContainer}>
-        <NavLink to="/flowsheet">
-          <Button>FLOWSHEETS</Button>
-        </NavLink>
         <NavLink to="/qr">
           <Button>QR SCAN</Button>
         </NavLink>
