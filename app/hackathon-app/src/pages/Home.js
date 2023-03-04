@@ -29,7 +29,7 @@ export default function Home() {
         <NavLink>
           <Button>EMAR</Button>
         </NavLink>
-        <NavLink>
+        <NavLink to="/documents">
           <Button>DOCUMENTS</Button>
         </NavLink>
       </div>

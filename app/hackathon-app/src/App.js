@@ -12,6 +12,7 @@ import React, { useState, useEffect } from "react";
 import PatientList from "./pages/PatientList";
 import classes from "./App.module.css";
 import Patient from "./pages/Patient";
+import Documents from "./pages/Documents";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "/lexicomp", element: <Lexicomp /> },
       { path: "/orders", element: <Orders /> },
       { path: "/patient", element: <Patient /> },
+      { path: "/documents", element: <Documents /> },
     ],
   },
 ]);
