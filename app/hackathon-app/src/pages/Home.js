@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
+import Page from '../components/Page';
 
 export default function Home() {
   return (
-    <div>
+    <Page>
       <h1>THIS IS OUR HOME PAGE</h1>
       <NavLink to="/flowsheet">
         <button>FLOWSHEETS</button>
@@ -16,6 +17,6 @@ export default function Home() {
       <NavLink to="/patientlist">
         <button>PATIENTLIST</button>
       </NavLink>
-    </div>
+    </Page>
   );
 }
