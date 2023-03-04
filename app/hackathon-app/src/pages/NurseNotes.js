@@ -19,14 +19,15 @@ export default function NurseNotes(props) {
   console.log(content.state.content);
 
   useEffect(() => {
-    content.state.content.forEach(note => {
-      NOTES.push(<Note date={note.date} note={note.note} key={Math.random()}/>)
-    })
-    setNotesArray(NOTES);
-    console.log("Effect RAN")
-  }, [])
-  console.log(NOTES);
+    const temp = [];
 
+    content.state.content.forEach((note) => {
+      temp.push(<Note date={note.date} note={note.note} key={Math.random()} />);
+    });
+    setNotesArray(temp);
+    console.log("Effect RAN");
+  }, []);
+  // console.log(NOTES);
 
   const onSave = () => {
     const newNote = (
