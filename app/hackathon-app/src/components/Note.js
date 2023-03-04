@@ -2,7 +2,7 @@ import classes from './Note.module.css'
 
 export default function Note(props) {
   return (
-    <div>
+    <div id={props.id}>
         <div className={classes.date}>
       <p>Date:</p>
       <p>{props.date}</p></div>
