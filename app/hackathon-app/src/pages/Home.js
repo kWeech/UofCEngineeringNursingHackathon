@@ -12,10 +12,10 @@ export default function Home() {
           <Button>FLOWSHEETS</Button>
         </NavLink>
         <NavLink to="/qr">
-          <Button>QR</Button>
+          <Button>QR SCAN</Button>
         </NavLink>
         <NavLink to="/patientlist">
-          <Button>PATIENTLIST</Button>
+          <Button>PATIENT LIST</Button>
         </NavLink>
         <NavLink to="/policy">
           <Button>POLICY</Button>
@@ -25,6 +25,12 @@ export default function Home() {
         </NavLink>
         <NavLink to="/orders">
           <Button>ORDERS</Button>
+        </NavLink>
+        <NavLink to="/lexicomp">
+          <Button>EMAR</Button>
+        </NavLink>
+        <NavLink to="/orders">
+          <Button>DOCUMENTS</Button>
         </NavLink>
       </div>
     </Page>
