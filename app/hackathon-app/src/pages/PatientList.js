@@ -55,6 +55,7 @@ export default function PatientList() {
     },
   ];
 
+  const loadPatientModal = (event) => {};
   return (
     <Page>
       <h1>THIS IS PATIENTLIST</h1>
@@ -64,6 +65,7 @@ export default function PatientList() {
             <Button
               key={patient.id}
               className={classes.Button}
+              onClick={loadPatientModal}
             >{`${patient.id}: ${patient.name} ${patient.lastName}`}</Button>
           );
         })}

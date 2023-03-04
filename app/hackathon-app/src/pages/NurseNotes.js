@@ -16,8 +16,11 @@ export default function NurseNotes() {
        value={value}
        onChange={(event) => setValue(event.target.value)}
       />
-      <button onMouseDown={listen} onMouseUp={stop}>
-        🎤
+      <button onMouseDown={listen} >
+        🎤 Start
+      </button>
+      <button onMouseDown={stop}>
+        🎤 Stop
       </button>
       <p>Yo check me out im text to speech</p>
      </div>
