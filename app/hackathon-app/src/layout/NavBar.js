@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
+import classes from "./NavBar.module.css";
 
 export default function NavBar() {
-   return <header>
-    <NavLink to="/home">Menu</NavLink>
-   </header>
+  return (
+    <div className={classes.nav}>
+      <NavLink style={{ textDecoration: "none" }}>
+        <p className={classes.text}>HOME</p>
+      </NavLink>
+    </div>
+  );
 }
