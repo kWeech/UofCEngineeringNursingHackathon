@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 import Note from "../components/Note";
 import Page from "../components/Page";
+import classes from "./NurseNotes.module.css";
 
 const NOTES = [
   <Note date={"2022-12-03"} note={"This is a note"} key={1} />,
@@ -43,16 +44,19 @@ export default function NurseNotes() {
 
   return (
     <Page>
-      <h2>Add New Note</h2>
-      <p>{notesArray[0].props.note}</p>
-      <textarea
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
-      <button onMouseDown={listen}>🎤 Start</button>
-      <button onMouseDown={stop}>🎤 Stop</button>
-      <button onClick={onSave}>Save</button>
-      <button onClick={onClear}>Clear</button>
+      <h2 className={classes.header}>Add New Note</h2>
+      <div className={classes.addNoteContainer}>
+        <textarea
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+        <div className={classes.buttonContainer}>
+          <button onMouseDown={listen}>🎤 Start</button>
+          <button onMouseDown={stop}>🎤 Stop</button>
+          <button onClick={onSave}>Save</button>
+          <button onClick={onClear}>Clear</button>
+        </div>
+      </div>
       <h2>Historic Notes</h2>
       <textarea
         value={filterValue}
