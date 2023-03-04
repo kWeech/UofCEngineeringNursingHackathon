@@ -10,7 +10,7 @@ export default function Login() {
     return username === "Sara" && password === "swordfish";
   };
   return (
-    <Page>
+    <Page show={false}>
       <h1>LOGIN PAGE</h1>
       <NavLink to="/home">
         <button disabled={!isLoginFormValid()}>LOGIN</button>
