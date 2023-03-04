@@ -5,6 +5,7 @@ import Page from "../components/Page";
 import classes from "./NurseNotes.module.css";
 import { useLocation } from "react-router-dom";
 
+
 const NOTES = [
 ];
 
@@ -19,14 +20,15 @@ export default function NurseNotes(props) {
   });
   const content = useLocation();
   console.log(content.state.content);
-  // useEffect(() => {
-  //   content.state.content.forEach(note => {
-  //     const notes = (<Note date={new Date(note.date)} note={note.note} key={Math.random()}/>)
-  //     NOTES.push(notes)
-  //   })
-  //   setNotesArray(NOTES);
-  // }, [])
-  // console.log(NOTES);
+
+  useEffect(() => {
+    content.state.content.forEach(note => {
+      NOTES.push(<Note date={note.date} note={note.note} key={Math.random()}/>)
+    })
+    setNotesArray(NOTES);
+    console.log("Effect RAN")
+  }, [])
+  console.log(NOTES);
 
 
   const onSave = () => {
