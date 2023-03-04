@@ -9,7 +9,7 @@ import Medication from "../components/Medication";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
-    case "Call/Text":
+    case "Medications":
       console.log("entered call/text");
       {
         return {
