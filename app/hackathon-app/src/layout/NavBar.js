@@ -7,6 +7,9 @@ export default function NavBar() {
       <NavLink to="/home" style={{ textDecoration: "none" }}>
         <p className={classes.text}>HOME</p>
       </NavLink>
+      <NavLink to="/" style={{ textDecoration: "none" }}>
+        <p className={classes.text}>LOGOUT</p>
+      </NavLink>
     </div>
   );
 }
