@@ -28,7 +28,7 @@ const onClear = () => {
 }
 
  return (
-   <div>
+   <Page>
      <textarea
        value={value}
        onChange={(event) => setValue(event.target.value)}
@@ -43,7 +43,7 @@ const onClear = () => {
       <button onClick={onClear}>Clear</button>
       <h2>Historic Notes</h2>
       <div>{NOTES}</div>
-     </div>
+     </Page>
     )
   }
 
