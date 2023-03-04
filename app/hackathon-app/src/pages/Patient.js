@@ -8,6 +8,7 @@ import Medication from "../components/Medication";
 import { Link } from "react-router-dom";
 import Contact from "../components/Contact";
 import Appointments from "../components/Appointments";
+import classes from "./Patient.module.css";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
@@ -80,7 +81,9 @@ export default function Patient(props) {
 
   return (
     <>
-      <h1>{`${patient.state.patient.name} ${patient.state.patient.lastName}`}</h1>
+      <h1
+        className={classes.name}
+      >{`${patient.state.patient.name} ${patient.state.patient.lastName}`}</h1>
       {modalHandler.modal && (
         <Modal cancel={cancel}>{modalHandler.modalType}</Modal>
       )}
