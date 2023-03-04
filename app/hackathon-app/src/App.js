@@ -5,6 +5,8 @@ import Flowsheets from "./pages/Flowsheets";
 import NurseNotes from "./pages/NurseNotes";
 import QR from "./pages/QR";
 import Policy from "./pages/Policy";
+import Lexicomp from "./pages/Lexicomp";
+import Orders from "./pages/Orders";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import PatientList from "./pages/PatientList";
@@ -21,6 +23,8 @@ const router = createBrowserRouter([
       { path: "/qr", element: <QR /> },
       { path: "/policy", element: <Policy /> },
       { path: "/patientlist", element: <PatientList /> },
+      { path: "/lexicomp", element: <Lexicomp /> },
+      { path: "/orders", element: <Orders /> },
     ],
   },
 ]);

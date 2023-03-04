@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSpeechRecognition } from 'react-speech-kit';
-  const dummyNotes = [];
+
 export default function NurseNotes() {
   const [notesArray, setNotesArray] = useState(dummyNotes);
  const [value, setValue] = useState('')
