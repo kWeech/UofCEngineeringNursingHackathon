@@ -23,6 +23,10 @@ const onSave = () => {
   setNotesArray(newNote);
 }
 
+const onClear = () => {
+  setValue("");
+}
+
  return (
    <div>
      <textarea
@@ -36,6 +40,7 @@ const onSave = () => {
         🎤 Stop
       </button>
       <button onClick={onSave}>Save</button>
+      <button onClick={onClear}>Clear</button>
       <h2>Historic Notes</h2>
       <div>{NOTES}</div>
      </div>
