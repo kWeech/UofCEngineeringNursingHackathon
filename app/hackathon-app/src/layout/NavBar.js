@@ -4,7 +4,7 @@ import classes from "./NavBar.module.css";
 export default function NavBar() {
   return (
     <div className={classes.nav}>
-      <NavLink style={{ textDecoration: "none" }}>
+      <NavLink to="/home" style={{ textDecoration: "none" }}>
         <p className={classes.text}>HOME</p>
       </NavLink>
     </div>
