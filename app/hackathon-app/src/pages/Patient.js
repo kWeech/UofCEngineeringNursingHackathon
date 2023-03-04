@@ -5,27 +5,23 @@ import Modal from "../components/Modal";
 import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
-import Note from '../components/Note';
-
+import { Link } from "react-router-dom";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
-    case "Medications":
-      console.log("entered call/text");
-      {
-        return {
-          ...state,
-          modal: true,
-          modalType: (
-            <Medication content={state.patient.medication}></Medication>
-          ),
-        };
-      }
-    case "TOGGLE_CHANGED": {
-      console.log("Entered Toggle Changed");
+    case "Medications": {
       return {
         ...state,
-        toggleState: !state.toggleState,
+        modal: true,
+        modalType: <Medication content={state.patient.medication}></Medication>,
+      };
+    }
+    case "Call/Text": {
+      console.log("entered call/text");
+      return {
+        ...state,
+        modal: true,
+        modalType: <Medication content={state.patient.medication}></Medication>,
       };
     }
   }
@@ -61,6 +57,12 @@ export default function Patient(props) {
         <Button>FLOWSHEETS</Button>
       </NavLink>
       <Button onClick={ButtonClickHandler}>Community Appointments</Button>
+      <Link
+        to="/nursenotes"
+        state={{ content: patient.state.patient.nurseNotes }}
+      >
+        <Button>Nurse Notes</Button>
+      </Link>
     </>
   );
 }
