@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { useReducer } from "react";
 import Medication from "../components/Medication";
 import { Link } from "react-router-dom";
+import Contact from "../components/Contact";
 const modalHandlerController = (state, action) => {
   console.log(action.type);
   switch (action.type) {
@@ -21,7 +22,7 @@ const modalHandlerController = (state, action) => {
       return {
         ...state,
         modal: true,
-        modalType: <Medication content={state.patient.medication}></Medication>,
+        modalType: <Contact content={state.patient}></Contact>,
       };
     }
   }
@@ -50,7 +51,7 @@ export default function Patient(props) {
     <>
       <h1>Patient Menu</h1>
       {modalHandler.modal && <Modal>{modalHandler.modalType}</Modal>}
-      <Button onClick={ButtonClickHandler}>Call/Text</Button>
+      <Button onClick={ButtonClickHandler}>Contact Information</Button>
       <Button onClick={ButtonClickHandler}>Medications</Button>
       <Button onClick={ButtonClickHandler}>Care Team List</Button>
       <NavLink to="/flowsheet">
