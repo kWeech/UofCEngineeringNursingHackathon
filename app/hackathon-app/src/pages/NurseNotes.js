@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useSpeechRecognition } from 'react-speech-kit';
 
-  
 export default function NurseNotes() {
+  const [notesArray, setNotesArray] = useState(dummyNotes);
  const [value, setValue] = useState('')
  const { listen, stop } = useSpeechRecognition({
    onResult: (result) => {
