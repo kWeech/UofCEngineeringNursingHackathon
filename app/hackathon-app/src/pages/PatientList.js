@@ -56,15 +56,7 @@ export default function PatientList() {
       medication: [{ name: "E", dosage: "dosageE" }],
       careTeam: [{ id: "NurseEId", name: "NurseE" }],
       flowSheet: [],
-      nurseNotes: [<Note></Note>],
-      nurseNotes: [
-        { date: "2020-12-09", note: "A Note about the patient", key: 1 },
-        {
-          date: "2022-11-19",
-          note: "This patient has been here for a long time",
-          key: 2,
-        },
-      ],
+      nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteD" }],
       communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
     },
     // {
