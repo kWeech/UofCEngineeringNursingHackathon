@@ -11,9 +11,6 @@ export default function Home() {
         <NavLink to="/flowsheet">
           <Button>FLOWSHEETS</Button>
         </NavLink>
-        <NavLink to="/nursenotes">
-          <Button>NURSENOTES</Button>
-        </NavLink>
         <NavLink to="/qr">
           <Button>QR</Button>
         </NavLink>
