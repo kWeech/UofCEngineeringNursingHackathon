@@ -26,10 +26,10 @@ export default function Home() {
         <NavLink to="/orders">
           <Button>ORDERS</Button>
         </NavLink>
-        <NavLink to="/lexicomp">
+        <NavLink>
           <Button>EMAR</Button>
         </NavLink>
-        <NavLink to="/orders">
+        <NavLink>
           <Button>DOCUMENTS</Button>
         </NavLink>
       </div>
