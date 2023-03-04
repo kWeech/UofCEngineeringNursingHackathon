@@ -6,7 +6,7 @@ import classes from "./Home.module.css";
 export default function Home() {
   return (
     <Page show={false}>
-      <h1 className={classes.home}>HOME PAGE</h1>
+      <h1 className={classes.home}>HOME</h1>
       <div className={classes.buttonContainer}>
         <NavLink to="/qr">
           <Button>QR SCAN</Button>
