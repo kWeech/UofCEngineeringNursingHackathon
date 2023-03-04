@@ -1,0 +1,20 @@
+.date {
+    display:flex;
+}
+
+.date p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.note {
+    margin:0;
+}
+
+.note p {
+    border: solid black;
+}
+
+.body {
+    padding:0;
+}
