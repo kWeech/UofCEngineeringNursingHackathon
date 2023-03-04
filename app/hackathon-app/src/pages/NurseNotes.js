@@ -6,7 +6,6 @@ import classes from "./NurseNotes.module.css";
 import { useLocation } from "react-router-dom";
 
 export default function NurseNotes(props) {
-  const NOTES = []
   const [notesArray, setNotesArray] = useState([]);
   const [value, setValue] = useState("");
   const [filterValue, setFilterValue] = useState("");
