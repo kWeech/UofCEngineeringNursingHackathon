@@ -29,7 +29,6 @@ const modalHandlerController = (state, action) => {
 };
 
 export default function Patient(props) {
-<<<<<<< HEAD
   const location = useLocation();
   return (
     <>
@@ -43,42 +42,6 @@ export default function Patient(props) {
         </NavLink>
         <Button>Community Appointments</Button>
       </Modal>
-=======
-  const [modalHandler, dispatchmodalHandler] = useReducer(
-    modalHandlerController,
-    {
-      modal: false,
-      modalType: null,
-    }
-  );
-
-  const patient = {
-    id: 1,
-    name: "FirstNameA",
-    lastName: "LastNameA",
-    medication: [{ name: "A", dosage: "dosageA" }],
-    careTeam: [{ id: "NurseAId", name: "NurseA" }],
-    flowSheet: [],
-    nurseNotes: [{ date: new Date(1995, 11, 17), note: "sampleNoteA" }],
-    communityAppointments: [{ date: new Date(1995, 11, 17, 3, 24, 0) }],
-  };
-
-  const ButtonClickHandler = (event) => {
-    console.log(event);
-  };
-
-  return (
-    <>
-      <h1>Patient Menu</h1>
-      {modalHandler.modal && <Modal></Modal>}
-      <Button onClick={ButtonClickHandler}>Call/Text</Button>
-      <Button>Medications</Button>
-      <Button>Care Team List</Button>
-      <NavLink to="/flowsheet">
-        <Button>FLOWSHEETS</Button>
-      </NavLink>
-      <Button>Community Appointments</Button>
->>>>>>> 10bcfe31bb6b6a8f86dad2055cfee5074afbdc8f
     </>
   );
 }
