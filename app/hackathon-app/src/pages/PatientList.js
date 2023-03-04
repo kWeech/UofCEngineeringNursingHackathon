@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Modal from "../components/Modal";
 import { useState } from "react";
 export default function PatientList() {
+  const [modalController, setModalController] = useState(false);
   const patientList = [
     {
       id: 1,
@@ -57,11 +58,14 @@ export default function PatientList() {
     },
   ];
 
-  const loadPatientModal = (event) => {};
+  const loadPatientModal = (event) => {
+    console.log(event);
+    setModalController(true);
+  };
   return (
     <Page>
       <h1>THIS IS PATIENTLIST</h1>
-      <Modal></Modal>
+      {modalController && <Modal></Modal>}
       <div className={classes.patientListContainer}>
         {patientList.map((patient) => {
           return (
