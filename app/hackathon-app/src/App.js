@@ -10,6 +10,7 @@ import Orders from "./pages/Orders";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import PatientList from "./pages/PatientList";
+import classes from "./App.module.css";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.app}>
       <RouterProvider router={router} />
     </div>
   );
