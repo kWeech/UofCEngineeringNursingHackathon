@@ -47,6 +47,7 @@ export default function NurseNotes() {
       <h2 className={classes.header}>Add New Note</h2>
       <div className={classes.addNoteContainer}>
         <textarea
+          placeholder="Add a note here"
           value={value}
           onChange={(event) => setValue(event.target.value)}
         />
@@ -57,12 +58,15 @@ export default function NurseNotes() {
           <button onClick={onClear}>Clear</button>
         </div>
       </div>
-      <h2>Historic Notes</h2>
-      <textarea
-        value={filterValue}
-        onChange={(event) => setFilterValue(event.target.value)}
-      />
-      <button onClick={onSearchClear}>Clear</button>
+      <h3>Historic Notes</h3>
+      <div className={classes.filterContainer}>
+        <textarea
+          value={filterValue}
+          onChange={(event) => setFilterValue(event.target.value)}
+          placeholder="Filter by note"
+        ></textarea>
+        <button onClick={onSearchClear}>Clear</button>
+      </div>
       <div>
         {notesArray.filter((note) =>
           note.props.note.toLowerCase().includes(filterValue.toLowerCase())
