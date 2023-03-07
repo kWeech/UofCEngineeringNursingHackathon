@@ -19,3 +19,7 @@ Our goal was to hit a few key features from our nurses to improve their workflow
 2. QR code scanning for easability grabbing patient information.
 3. Note collection and voice to text capabilities.
 
+## Achievements
+- Mobile accessible patient information
+- Text-to-speech note taking
+- QR Scanning (it is not setup to go to another page, however the information is read correctly)
